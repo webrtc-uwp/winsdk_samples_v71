@@ -381,7 +381,7 @@ void * __stdcall memmoveInternal(void * dst, const void * src, size_t count)
 {
     void * ret = dst;
 
-#ifdef _X86_
+#if defined(_X86_) && !defined(__clang__)
     if (dst <= src || (char *)dst >= ((char *)src + count)) {
 
         /*
