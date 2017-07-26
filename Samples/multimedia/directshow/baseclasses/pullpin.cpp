@@ -11,6 +11,10 @@
 #include <streams.h>
 #include "pullpin.h"
 
+#ifdef RX64
+#include <vfwmsgs.h>
+#endif
+
 #ifdef DXMPERF
 #include "dxmperf.h"
 #endif // DXMPERF

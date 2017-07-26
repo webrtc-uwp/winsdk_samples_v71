@@ -11,7 +11,10 @@
 #include <mmsystem.h>       // Needed for definition of timeGetTime
 #include <limits.h>         // Standard data type limit definitions
 #include <measure.h>        // Used for time critical log functions
-
+#ifdef RX64
+#include <vfwmsgs.h>
+#include <timeapi.h>
+#endif
 #pragma warning(disable:4355)
 
 //  Helper function for clamping time differences

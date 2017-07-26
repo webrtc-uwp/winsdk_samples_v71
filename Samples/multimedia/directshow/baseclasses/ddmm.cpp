@@ -12,6 +12,9 @@
 #include <ddraw.h>
 #include "ddmm.h"
 
+#ifdef RX64
+#include <errhandlingapi.h>
+#endif
 /*
  * FindDeviceCallback
  */

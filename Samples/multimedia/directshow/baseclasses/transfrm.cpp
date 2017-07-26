@@ -11,7 +11,9 @@
 #include <streams.h>
 #include <measure.h>
 
-
+#ifdef RX64
+#include <vfwmsgs.h>
+#endif
 // =================================================================
 // Implements the CTransformFilter class
 // =================================================================

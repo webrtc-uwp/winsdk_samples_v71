@@ -17,6 +17,9 @@
 #include <limits.h>
 #include "seekpt.h"
 
+#ifdef RX64
+#include <vfwmsgs.h>
+#endif
 // 'bool' non standard reserved word
 #pragma warning(disable:4237)
 

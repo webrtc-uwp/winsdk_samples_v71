@@ -13,6 +13,12 @@
 #include <strsafe.h>
 #include <checkbmi.h>
 
+#ifdef RX64
+#include <vfwmsgs.h>
+#include <wingdi.h>
+#endif
+
+
 static UINT MsgDestroy;
 
 // Constructor

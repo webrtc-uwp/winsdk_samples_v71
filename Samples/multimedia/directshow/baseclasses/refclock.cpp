@@ -14,7 +14,9 @@
 #include "dxmperf.h"
 #endif // DXMPERF
 
-
+#ifdef RX64
+#include <timeapi.h>
+#endif
 // 'this' used in constructor list
 #pragma warning(disable:4355)
 

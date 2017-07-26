@@ -10,6 +10,9 @@
 #include <streams.h>
 #include <strsafe.h>
 
+#ifdef RX64
+#include <vfwmsgs.h>
+#endif
 #ifdef PERF
 #include <measure.h>
 #endif

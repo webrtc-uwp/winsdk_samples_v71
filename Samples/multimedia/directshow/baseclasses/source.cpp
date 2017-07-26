@@ -19,7 +19,9 @@
 // section from within FillBuffer().
 
 #include <streams.h>
-
+#ifdef RX64
+#include <vfwmsgs.h>
+#endif
 
 //
 // CSource::Constructor

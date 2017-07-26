@@ -255,7 +255,9 @@
 #include <measure.h>
 #include <transip.h>
 
-
+#ifdef RX64
+#include <vfwmsgs.h>
+#endif
 // =================================================================
 // Implements the CTransInPlaceFilter class
 // =================================================================

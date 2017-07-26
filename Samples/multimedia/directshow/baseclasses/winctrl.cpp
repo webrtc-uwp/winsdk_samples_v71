@@ -10,7 +10,9 @@
 #include <streams.h>
 #include <intsafe.h>
 #include <checkbmi.h>
-
+#ifdef RX64
+#include <vfwmsgs.h>
+#endif
 // The control interface methods require us to be connected
 
 #define CheckConnected(pin,code)                    \

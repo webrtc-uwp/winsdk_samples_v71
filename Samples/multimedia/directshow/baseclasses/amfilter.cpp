@@ -34,6 +34,9 @@
 #include "dxmperf.h"
 #endif // DXMPERF
 
+#ifdef RX64
+#include <vfwmsgs.h>
+#endif
 
 //=====================================================================
 // Helpers

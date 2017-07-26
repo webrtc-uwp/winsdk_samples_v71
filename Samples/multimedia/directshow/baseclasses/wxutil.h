@@ -11,6 +11,12 @@
 #ifndef __WXUTIL__
 #define __WXUTIL__
 
+#if RX64
+#include <rx64_utility.h>
+#include <mmiscapi2.h>
+#include <stringapiset.h>
+#endif
+
 // eliminate spurious "statement has no effect" warnings.
 #pragma warning(disable: 4705)
 
@@ -522,10 +528,12 @@ bool TimeKillSynchronousFlagAvailable( void );
 //  Helper to replace lstrcpmi
 __inline int lstrcmpiLocaleIndependentW(LPCWSTR lpsz1, LPCWSTR lpsz2)
 {
+	//should be used CompareStringEx
     return  CompareStringW(LOCALE_INVARIANT, NORM_IGNORECASE, lpsz1, -1, lpsz2, -1) - CSTR_EQUAL;
 }
 __inline int lstrcmpiLocaleIndependentA(LPCSTR lpsz1, LPCSTR lpsz2)
 {
+	//should be used CompareStringEx
     return  CompareStringA(LOCALE_INVARIANT, NORM_IGNORECASE, lpsz1, -1, lpsz2, -1) - CSTR_EQUAL;
 }
 

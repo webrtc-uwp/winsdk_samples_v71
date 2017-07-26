@@ -9,7 +9,10 @@
 
 #include <streams.h>
 #include <strsafe.h>
-
+#ifdef RX64
+#include <vfwmsgs.h>
+#include <objbase.h>
+#endif
 //---------------------------------------------------------------------------
 // defines
 
