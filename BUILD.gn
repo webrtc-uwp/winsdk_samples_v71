@@ -30,6 +30,7 @@ if (is_win) {
         "-Wno-reorder",
         "-Wno-string-conversion",
         "-Wno-tautological-constant-out-of-range-compare",
+        "-Wno-unknown-pragmas",
         "-Wno-unused-private-field",
         "-Wno-writable-strings",
       ]
