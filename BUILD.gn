@@ -10,30 +10,13 @@ if (is_win) {
   baseclasses_dir = "Samples/multimedia/directshow/baseclasses"
 
   config("winsdk_samples_config") {
-    include_dirs = [ baseclasses_dir ]
-  }
-
-  config("winsdk_samples_warnings_config") {
     if (is_win && is_clang) {
       cflags = [
-        # Disable warnings failing when compiling with Clang on Windows.
-        # https://bugs.chromium.org/p/webrtc/issues/detail?id=5366
-        "-Wno-comment",
-        "-Wno-delete-non-virtual-dtor",
-        "-Wno-ignored-attributes",
-        "-Wno-logical-op-parentheses",
-        "-Wno-non-pod-varargs",
-        "-Wno-microsoft-extra-qualification",
-        "-Wno-missing-braces",
-        "-Wno-overloaded-virtual",
-        "-Wno-parentheses",
-        "-Wno-reorder",
-        "-Wno-string-conversion",
-        "-Wno-tautological-constant-out-of-range-compare",
-        "-Wno-unknown-pragmas",
-        "-Wno-unused-private-field",
-        "-Wno-writable-strings",
+        "-imsvc",
+        rebase_path(baseclasses_dir, root_build_dir)
       ]
+    } else {
+      include_dirs = [ baseclasses_dir ]
     }
   }
 
@@ -110,7 +93,6 @@ if (is_win) {
     ]
     configs += [
       "//build/config/compiler:no_chromium_code",
-      ":winsdk_samples_warnings_config",
     ]
   }
 }
