@@ -10,9 +10,20 @@ if (is_win) {
   baseclasses_dir = "Samples/multimedia/directshow/baseclasses"
 
   config("winsdk_samples_config") {
-    include_dirs = [ baseclasses_dir ]
+    if (is_win && is_clang) {
+      # When compiling with clang-cl, use -imsvc (similar to -isystem in clang)
+      # instead of include_dirs (-I), so we don't need to suppress warnings
+      # coming from this package in other projects.
+      "-imsvc",
+      rebase_path(baseclasses_dir, root_build_dir),
+    } else {
+      include_dirs = [ baseclasses_dir ]
+    }
   }
 
+  # These warnings suppression flags are still needed even if -imsvc is used
+  # because some of them will trigger when .cpp files in this package are
+  # compiled.
   config("winsdk_samples_warnings_config") {
     if (is_win && is_clang) {
       cflags = [
