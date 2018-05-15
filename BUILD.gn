@@ -14,8 +14,10 @@ if (is_win) {
       # When compiling with clang-cl, use -imsvc (similar to -isystem in clang)
       # instead of include_dirs (-I), so we don't need to suppress warnings
       # coming from this package in other projects.
-      "-imsvc",
-      rebase_path(baseclasses_dir, root_build_dir),
+      cflags = [
+        "-imsvc",
+        rebase_path(baseclasses_dir, root_build_dir),
+      ]
     } else {
       include_dirs = [ baseclasses_dir ]
     }
